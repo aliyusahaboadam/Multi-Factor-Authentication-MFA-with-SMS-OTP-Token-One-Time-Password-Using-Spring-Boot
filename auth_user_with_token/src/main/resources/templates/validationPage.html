@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Validation Page Page</title>
+    <link rel="stylesheet" th:href="@{../style.css}">
+    
+</head>
+<body>
+    <div class="container">
+          
+          <div class="message" th:if="${message != null}">
+            
+            [[${message}]]
+          
+          </div>
+        
+        <h2>OTP Validation</h2>
+         
+        
+        <form 
+        
+        th:action="@{/otp-validation}" 
+        method="post"
+        th:object="${otp}"
+        role="form"
+        
+        >
+            <input type="text" name="email" placeholder="Enter your email" required>
+            <input type="text" name="code" placeholder="Enter your OTP" required>
+            <input type="submit" value="Validate">
+        </form>
+    </div>
+</body>
+</html>
